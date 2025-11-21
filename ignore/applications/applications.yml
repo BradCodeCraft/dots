@@ -1,0 +1,6 @@
+postman:
+  url: https://dl.pstmn.io/download/latest/linux_64
+  extracted_folder_name: postman
+intellij_ce:
+  url: https://www.jetbrains.com/idea/download/download-thanks.html?platform=linux&code=IIC
+  add_to_bash: export PATH=/opt/idea-IC-252.26830.84/bin:$PATH
