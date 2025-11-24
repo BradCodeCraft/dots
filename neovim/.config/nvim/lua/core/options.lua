@@ -37,12 +37,16 @@ vim.o.so = 20
 vim.o.sr = true
 -- Don't ignore case when capitalizing
 vim.o.scs = true
+-- Set number of spaces to use for auto indent step
+vim.o.sw = 4
 -- Hide mode
 vim.o.smd = false
 -- Auto indent
 vim.o.si = true
 -- Enable smoothscroll
 vim.o.sms = true
+-- Set number of space that a Tab counts for
+vim.o.ts = 4
 -- Enable true color
 vim.o.tgc = true
 -- Set timeout time

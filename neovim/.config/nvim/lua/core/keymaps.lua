@@ -27,3 +27,12 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 
 -- Quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+
+-- Center on bottom
+vim.keymap.set("n", "G", "Gzz")
+
+-- Center when moving down
+vim.keymap.set("n", "j", "jzz")
+
+-- Center when moving up
+vim.keymap.set("n", "k", "kzz")
