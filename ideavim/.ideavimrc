@@ -2,116 +2,40 @@
 let mapleader=" "
 let maplocalleader=" "
 
-" Copy indent from previous line
-set autoindent
-
-" Auto write file if changed
-set autowrite
-
-" Set backspace behavior
-set backspace=indent,eol,start
-
-" Sync clipboard
-set clipboard=unnamedplus
-
-" Confirm on unsaved/read-only files
-set confirm
-
-" Hide concealable text
-set conceallevel=2
-
-" Enable cursor line
-set cursorline
-set cursorlineopt=number
-
-" Use Space instead of Tab
-set expandtab
-
-" Close fold level
-set foldlevel=99
-
-" Set indent fold method
-set foldmethod=indent
-
-" Set closed fold display text
-set foldtext={...}
-
 " Confirm to save changes before exiting modified buffer
 set formatoptions=jcroqlnt
-
-" Ignore case when searching
-set ignorecase
-
-" Preview substitutions live
-set inccommand=split
-
-" Enable mouse mode
-set mouse=a
-
-" Disable line wrap
-set nowrap
 
 " Enable line number
 set number
 
-" Enable relative line number
+" Enable relative line numbers
 set relativenumber
 
-" Hide cursor line and column in the status line
-set noruler
-
-" Disable timeout
-set notimeout
-
-" Disable line wrap
-set nowrap
-
-" Set scrolloff lines
-set scrolloff=20
+" Set scrolloff line
+set scrolloff=10
 
 " Round indent
 set shiftround
 
-" Round indent
-set smartround
-
-" Don't ignore case when capitalizing
-set smartcase
-
-" Hide mode
-set noshowmode
-
-" Auto indent
-set smartindent
-
-" Enable smoothscroll
-set smoothscroll
-
-" Enable true color
-set termguicolors
-
-" Set timeout time
-set timeoutlen=300
-
-" Set maximum number of changes that can be undone
-set timeoutlen=10000
-
-" Save undo file
-set undofile
-
-" Set time to flush swap file
-set updatetime=200
-
 " Columns of context
-set sidescrolloff=20
+set sidescrolloff=8
 
 " which-key says to set this high, or set notimeout
+set timeoutlen=10000
+set notimeout
 set undolevels=10000
 
-" Neovim settings that differ from Vim
-set formatoptions=tcqj
-set shortmess=filnxtToOF
+" Disable line wrap
+set nowrap
 
+" Enable copy/paste to/from system keyboard
+set clipboard+=unnamedplus
+
+" Neovim settings that differ from Vim
+set backspace=indent,eol,start
+set formatoptions=tcqj
+set listchars=tab:>\ ,trail:-,nbsp:+
+set shortmess=filnxtToOF
 
 " ========================================
 " Plugin Configurations
