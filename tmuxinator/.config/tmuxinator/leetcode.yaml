@@ -1,0 +1,9 @@
+name: leetcode
+root: ~/Repositories/leetcode/
+
+windows:
+  - java:
+      root: ~/Repositories/leetcode/Java
+  - javascript:
+      root: ~/Repositories/leetcode/JavaScript
+

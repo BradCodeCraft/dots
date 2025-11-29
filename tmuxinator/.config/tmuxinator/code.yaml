@@ -1,0 +1,9 @@
+name: code
+root: ~/Repositories/
+
+windows:
+  - front-end:
+      root: ~/Repositories/
+  - javascript:
+      root: ~/Repositories/
+

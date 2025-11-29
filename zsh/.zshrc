@@ -1,6 +1,12 @@
 # Path to Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
 # Set theme
 ZSH_THEME="simple"
 

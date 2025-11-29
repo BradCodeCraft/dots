@@ -67,3 +67,10 @@ tasks:
     command: |
       curl -fsS https://dl.brave.com/install.sh | sh
     reboot-required: false
+
+  - name: "Tmuxinator"
+    description: "Setup tmuxinator"
+    command: |
+      sudo dnf install rubygems &&
+      gem install tmuxinator
+    reboot-required: false
