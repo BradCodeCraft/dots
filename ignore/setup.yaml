@@ -11,7 +11,7 @@ tasks:
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      sudo dnf install chromium gh stow tmux nodejs npm &&
+      sudo dnf install gh stow tmux nodejs npm &&
       sudo flatpak install intellij-idea-community postman spotify &&
       cd $HOME/dots && 
       stow neovim tmux ideavim &&
@@ -60,4 +60,10 @@ tasks:
     description: "Setup oh-my-zsh"
     command: |
       sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+    reboot-required: false
+
+  - name: "Brave"
+    description: "Setup Brave browser"
+    command: |
+      curl -fsS https://dl.brave.com/install.sh | sh
     reboot-required: false
