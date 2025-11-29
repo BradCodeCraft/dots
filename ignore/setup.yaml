@@ -1,0 +1,12 @@
+package_managers: 
+  dnf: chromium gh stow tmux nodejs npm zsh
+  flatpak: intellij-idea-community postman spotify
+docker: 
+  website: https://docs.docker.com/desktop/setup/install/linux/fedora/
+ohmyzsh: 
+  install: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+shell:
+  change_shell: chsh -s /usr/bin/zsh
+git: 
+  change_user_name: config --global user.name
+  change_user_email: config --global user.email
