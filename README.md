@@ -4,13 +4,14 @@
 
 - [My dotfiles for various tools](#my-dotfiles-for-various-tools)
   - [Information](#information)
+  - [Included](#included)
   <!--toc:end-->
 
 ## Information
 
 OS: [Fedora](https://fedoraproject.org/start)
 
-Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
+Terminal Emulator: [Ghostty](https://ghostty.org/)
 
 Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 
@@ -20,7 +21,7 @@ Font: [JetBrains Mono Nerd](https://github.com/ryanoasis/nerd-fonts/releases/dow
 
 Color Scheme: [Carbonfox](https://github.com/EdenEast/nightfox.nvim)
 
-Icon: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+Icon: Adwaita
 
 Cursor: [Bibata Modern Ice](https://www.gnome-look.org/p/1197198/)
 
@@ -33,14 +34,18 @@ NeoVim
 - Custom: personalized
 - Lazy: built with LazyVim distro
 
+Ghostty
+
 Kitty
 
 Tmux
 
 IdeaVim
 
+Zsh
+
 ### Resources
 
 Fonts
 
-Icons
+Cursor
