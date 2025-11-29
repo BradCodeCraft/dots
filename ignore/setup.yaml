@@ -1,12 +1,63 @@
-package_managers: 
-  dnf: chromium gh stow tmux nodejs npm zsh
-  flatpak: intellij-idea-community postman spotify
-docker: 
-  website: https://docs.docker.com/desktop/setup/install/linux/fedora/
-ohmyzsh: 
-  install: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-shell:
-  change_shell: chsh -s /usr/bin/zsh
-git: 
-  change_user_name: config --global user.name
-  change_user_email: config --global user.email
+metadata:
+  os: "Fedora"
+  hostname: "zendora"
+
+tasks:
+  - name: "System"
+    description: "Ensure system is up to date"
+    command: "sudo dnf upgrade"
+    reboot-required: false
+
+  - name: "Packages"
+    description: "Setup all necessary packages for development"
+    command: |
+      sudo dnf install chromium gh stow tmux nodejs npm &&
+      sudo flatpak install intellij-idea-community postman spotify &&
+      cd $HOME/dots && 
+      stow neovim tmux ideavim &&
+      git config --global user.name bradcodecraft &&
+      git config --global user.email bradcodecraft@gmail.com &&
+      gh auth login
+    reboot-required: false
+
+  - name: "Docker Desktop"
+    description: "Setup Docker Desktop"
+    website: https://docs.docker.com/desktop/setup/install/linux/fedora/
+    steps:
+      - command: |
+          sudo dnf -y install dnf-plugins-core && 
+          sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo &&
+          curl https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm\?utm_source\=docker\&utm_medium\=webreferral\&utm_campaign\=docs-driven-download-linux-amd64\&_gl\=1\*iivorp\*_ga\*MjE1NzQxMDk1LjE3NjQwODg1NDA.\*_ga_XJWPQMJYHQ\*czE3NjQzOTkwOTAkbzQkZzEkdDE3NjQzOTkxNDYkajQkbDAkaDA. -o $HOME/Downloads/docker-desktop-x86_64.rpm &&
+          sudo dnf install $HOME/Downloads/docker-desktop-x86_64.rpm
+        sign-in:
+          - generate-key: |
+              gpg --generate-key
+          - init-pass: |
+              pass init
+    reboot-required: false
+
+  - name: "Ghostty"
+    description: "Setup ghostty terminal emulator"
+    command: |
+      sudo dnf copr enable scottames/ghostty &&
+      sudo dnf install ghostty &&
+      rm -rf $HOME/.config/ghostty &&
+      cd $HOME/dots && 
+      stow ghostty
+    reboot-required: false
+
+  - name: "Zsh"
+    description: "Setup zsh shell"
+    command: |
+      sudo dnf install zsh &&
+      chsh -s /usr/bin/zsh &&
+      rm -rf $HOME/.zshrc &&
+      cd $HOME/dots && 
+      stow zsh 
+    reboot-required: true
+
+  - name: "Oh-My-Zsh"
+    description: "Setup oh-my-zsh"
+    command: |
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+    reboot-required: false
