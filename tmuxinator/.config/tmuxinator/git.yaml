@@ -4,6 +4,6 @@ root: ~/Repositories/
 windows:
   - front-end:
       root: ~/Repositories/
-  - javascript:
+  - back-end:
       root: ~/Repositories/
 
