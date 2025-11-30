@@ -11,8 +11,8 @@ tasks:
   - name: "Packages"
     description: "Setup all necessary packages for development"
     command: |
-      sudo dnf install gh stow tmux nodejs npm &&
-      sudo flatpak install intellij-idea-community postman spotify &&
+      sudo dnf -y install gh stow tmux nodejs npm gcc make git ripgrep fd-find unzip &&
+      sudo flatpak install -y intellij-idea-community postman spotify &&
       cd $HOME/dots && 
       stow neovim tmux ideavim &&
       git config --global user.name bradcodecraft &&
@@ -28,7 +28,7 @@ tasks:
           sudo dnf -y install dnf-plugins-core && 
           sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo &&
           curl https://desktop.docker.com/linux/main/amd64/docker-desktop-x86_64.rpm\?utm_source\=docker\&utm_medium\=webreferral\&utm_campaign\=docs-driven-download-linux-amd64\&_gl\=1\*iivorp\*_ga\*MjE1NzQxMDk1LjE3NjQwODg1NDA.\*_ga_XJWPQMJYHQ\*czE3NjQzOTkwOTAkbzQkZzEkdDE3NjQzOTkxNDYkajQkbDAkaDA. -o $HOME/Downloads/docker-desktop-x86_64.rpm &&
-          sudo dnf install $HOME/Downloads/docker-desktop-x86_64.rpm
+          sudo dnf -y install $HOME/Downloads/docker-desktop-x86_64.rpm
         sign-in:
           - generate-key: |
               gpg --generate-key
@@ -40,7 +40,7 @@ tasks:
     description: "Setup ghostty terminal emulator"
     command: |
       sudo dnf copr enable scottames/ghostty &&
-      sudo dnf install ghostty &&
+      sudo dnf -y install ghostty &&
       rm -rf $HOME/.config/ghostty &&
       cd $HOME/dots && 
       stow ghostty
@@ -53,7 +53,7 @@ tasks:
       chsh -s /usr/bin/zsh &&
       rm -rf $HOME/.zshrc &&
       cd $HOME/dots && 
-      stow zsh 
+      stow zsh
     reboot-required: true
 
   - name: "Oh-My-Zsh"
@@ -71,6 +71,6 @@ tasks:
   - name: "Tmuxinator"
     description: "Setup tmuxinator"
     command: |
-      sudo dnf install rubygems &&
+      sudo dnf -y install rubygems &&
       gem install tmuxinator
     reboot-required: false
